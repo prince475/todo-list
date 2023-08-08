@@ -1,6 +1,6 @@
-import { useState } from 'react'
-
-import './App.css'
+import React, { useState } from 'react'
+import TodoItems from './components/TodoItems'
+import AddForm from './components/AddForm'
 
 function App() {
   const [toDoList, setTodoList] = useState([
@@ -16,6 +16,7 @@ function deleteItem(id) {
 
 const addTask = (userInput) => {
   const newValue = {text: userInput, id: Date.now()}
+  setTodoList ((toDoList) => [newValue, ...toDoList] )
 }
 
   return (
